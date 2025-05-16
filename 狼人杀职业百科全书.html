@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWK狼人杀职业百科全书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@latest/dist/framer-motion.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #E0E0E0; /* Light gray for text on black background */
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .highlight-red {
+            color: #E31937;
+        }
+        .bg-highlight-red {
+            background-color: #E31937;
+        }
+        .border-highlight-red {
+            border-color: #E31937;
+        }
+        .bento-box {
+            background-color: #111111; /* Slightly lighter than pure black for boxes */
+            border: 1px solid #222222; /* Subtle border for boxes */
+        }
+        .content-box h2 {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 900;
+            margin-bottom: 1.5rem; /* 24px */
+            line-height: 1.2;
+        }
+        .content-box h2 .english-subtitle {
+            font-size: 1rem; /* 16px */
+            font-weight: 400;
+            color: #888888;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        .role-card h3 {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #E31937;
+            margin-bottom: 0.5rem;
+        }
+        .role-card h3 .english-name {
+            font-size: 1rem; /* 16px */
+            font-weight: 400;
+            color: #AAAAAA;
+            margin-left: 0.5rem;
+        }
+        .role-card h4 {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 700;
+            color: #E31937;
+            margin-bottom: 0.25rem;
+            margin-top: 0.75rem; /* 12px */
+        }
+        .role-card h4 .english-label {
+            font-size: 0.75rem; /* 12px */
+            color: #888888;
+            font-weight: 400;
+            margin-left: 0.25rem;
+        }
+        .role-card p, .role-card li {
+            font-size: 0.875rem; /* 14px */
+            color: #C0C0C0;
+            line-height: 1.6;
+        }
+        .role-card ul {
+            list-style-position: outside;
+            padding-left: 1.25rem; /* 20px */
+        }
+        .text-huge {
+            font-size: 6rem; /* Adjust as needed */
+            font-weight: 900;
+            line-height: 1;
+        }
+        .tech-border {
+            border-width: 2px;
+            border-style: solid;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to right, rgba(227, 25, 55, 0.8), rgba(227, 25, 55, 0.3));
+        }
+        .highlight-gradient-text {
+            background: linear-gradient(to right, #E31937, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Ensure Noto Sans SC is used for Chinese characters */
+        *:lang(zh-CN) {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+        .chinese-bold-large {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 700; /* Bold */
+        }
+    </style>
+</head>
+<body class="bg-black text-neutral-200">
+
+    <header class="py-12 md:py-20 text-center relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-5">
+             <i class="fas fa-moon text-[#E31937] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20rem] md:text-[30rem] transform rotate-[-15deg]"></i>
+        </div>
+        <div class="fm-animate">
+            <h1 class="text-5xl md:text-7xl font-black chinese-bold-large mb-4">
+                <span class="highlight-red">NWK</span>狼人杀职业百科全书
+            </h1>
+            <p class="text-xl md:text-2xl text-neutral-400 chinese-bold-large">
+                <span class="highlight-red">NWK</span> WEREWOLF GAME ROLES ENCYCLOPEDIA
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-12 md:space-y-20">
+        
+        <section id="introduction" class="content-box relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-book-open text-[#E31937] absolute -top-10 -right-10 text-[15rem] md:text-[20rem] transform rotate-[10deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">引言 <span class="english-subtitle">INTRODUCTION</span></h2>
+                <p class="mb-4">狼人杀作为一款风靡全球的社交推理游戏，其核心魅力在于身份牌的多样性与由此带来的变幻莫测的博弈。玩家们在隐藏身份、阵营对抗的紧张氛围中，通过语言、逻辑和心理的较量，体验推理的乐趣<sup>1</sup>。不同的角色拥有独特的技能和使命，深刻理解每一个职业的特性，是走向胜利的关键。本报告旨在详尽解析狼人杀游戏中超过<span class="text-huge highlight-gradient-text align-middle mx-2">20</span>个常见及特色职业，按照“职业”、“阵营”、“技能介绍”、“胜利条件”和“TIPS”的格式，帮助玩家全面掌握各职业的玩法精髓与策略深度。</p>
+                <p>在狼人杀的对局中，仅仅了解自身角色的技能是远远不够的。对整个游戏配置中所有可能出现的角色及其能力的全面认知，能让玩家在分析他人行为、判断发言真伪以及洞察潜在的隐藏信息时，拥有更广阔的视野和更精准的判断力。例如，当一名玩家声称自己是某个神职时，如果其他玩家了解当前板子（游戏配置）中根本不存在该神职，那么便可立即识破其谎言<sup>2</sup>。这种对全局角色池的掌握，无论是对于需要迷惑对手的狼人阵营，还是对于需要找出真相的好人阵营，都具有极高的战略价值。不同的角色组合会催生出截然不同的战术博弈，因此，深入理解每个角色的定位与潜力，是提升狼人杀游戏水平的必经之路。</p>
+            </div>
+        </section>
+
+        <section id="factions" class="content-box relative overflow-hidden">
+             <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-balance-scale text-[#E31937] absolute -bottom-10 -left-10 text-[15rem] md:text-[20rem] transform rotate-[-5deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">阵营及通用胜利条件 <span class="english-subtitle">FACTIONS & VICTORY CONDITIONS</span></h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 chinese-bold-large">好人阵营 <span class="text-sm text-neutral-400">(Good Camp / Villager Faction)</span></h3>
+                        <p class="mb-1"><strong class="text-[#E31937]">组成:</strong> 通常由不具备特殊技能的平民（或称村民）和拥有各类特殊能力的神职角色构成<sup>2</sup>。</p>
+                        <p><strong class="text-[#E31937]">通用胜利条件:</strong> 核心目标是通过白天的放逐投票或夜晚的神职技能，消灭所有狼人阵营的玩家<sup>2</sup>。在某些特殊情况下，例如好人阵营的四位神职角色在游戏第一天白天同时被淘汰，好人阵营也可能直接获胜<sup>1</sup>。</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 chinese-bold-large">狼人阵营 <span class="text-sm text-neutral-400">(Werewolf Camp / Werewolf Faction)</span></h3>
+                        <p class="mb-1"><strong class="text-[#E31937]">组成:</strong> 由多名狼人组成，其中可能包括拥有特殊技能的狼人角色，如狼王、狼美人等<sup>2</sup>。狼人阵营人数相对较少，通常混迹于好人之中，通过夜晚袭击和白天伪装来达成目标<sup>1</sup>。</p>
+                        <p class="mb-1"><strong class="text-[#E31937]">通用胜利条件:</strong> 根据游戏配置的不同，狼人阵营的胜利条件通常被称为“屠边”或“屠城”<sup>5</sup>。</p>
+                        <ul class="list-disc list-inside ml-4 space-y-1 text-neutral-300">
+                            <li><strong class="text-neutral-100">屠边 (Side Elimination):</strong> 指消灭所有平民角色，或者消灭所有神职角色<sup>5</sup>。这一规则使得狼人阵营无需消灭所有好人，只需针对性地瓦解好人阵营的某一支柱力量即可获胜。这也直接影响了游戏中不同身份的价值评估和攻防策略。例如，若狼人选择“屠神边”，则预言家、女巫等神职会成为狼人的首要攻击目标，守卫也需要优先保护这些关键神职。反之，若狼人选择“屠民边”，则平民的存亡变得至关重要，神职必须在平民被屠戮殆尽前找出所有狼人。因此，判断狼人采取何种“屠边”策略，是好人阵营制定应对方案的重要依据。</li>
+                            <li><strong class="text-neutral-100">屠城 (Total Elimination):</strong> 指消灭所有好人阵营的玩家<sup>5</sup>。在某些配置下，狼人数量达到或超过场上剩余好人数量时，也被视为狼人胜利<sup>2</sup>。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 chinese-bold-large">第三方阵营 <span class="text-sm text-neutral-400">(Third-Party Camp)</span></h3>
+                        <p class="mb-1"><strong class="text-[#E31937]">特点:</strong> 拥有完全独立的胜利目标，这些目标可能与好人或狼人阵营的利益一致，也可能截然相悖<sup>1</sup>。</p>
+                        <p><strong class="text-[#E31937]">通用胜利条件:</strong> 达成该阵营特定角色所要求的独特条件，例如丘比特与人狼情侣需要消灭所有其他玩家<sup>2</sup>。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="good-roles" class="content-box relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-users text-[#E31937] absolute -top-16 -left-16 text-[18rem] md:text-[25rem] transform rotate-[15deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">好人阵营职业详解 <span class="english-subtitle">GOOD CAMP ROLES</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>预言家 <span class="english-name">Seer</span> <i class="fas fa-eye ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每天晚上可以查验一名存活玩家的身份，获知其是好人阵营还是狼人阵营<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>预言家是好人阵营的核心信息来源，其首夜查验对象的选择至关重要。通常会选择首轮发言逻辑混乱、行为可疑的玩家，或根据警长竞选时的表现来决定查验目标<sup>2</sup>。</li>
+                            <li>如何有效地将查验信息传递给好人并获取信任，是预言家面临的最大挑战。这包括决定是否上警竞选警长、何时以及如何公布验人结果等。预言家通常是警徽的有力竞争者，警徽能赋予其归票和决定发言顺序的权力，有助于组织好人阵营<sup>2</sup>。</li>
+                            <li>预言家需要警惕狼人假冒身份（即“悍跳”）进行反制。一个真正的预言家不仅要准确找出狼人，更要凭借清晰的逻辑、令人信服的发言以及对局势的敏锐洞察，来赢得村民的信任，对抗潜在的悍跳狼。这种心理层面的博弈，其重要性丝毫不亚于查验技能本身<sup>2</sup>。</li>
+                            <li>过早暴露身份容易成为狼人首要攻击目标，但隐藏过深又可能导致好人阵营信息链断裂，失去引导优势<sup>2</sup>。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>女巫 <span class="english-name">Witch</span> <i class="fas fa-flask-potion ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>拥有一瓶解药和一瓶毒药。解药可以在夜晚救活一名被狼人杀害的玩家；毒药则可以在夜晚毒杀一名玩家。两瓶药在整局游戏中通常各只能使用一次，并且在同一个夜晚不能同时使用。女巫通常不能用解药救自己（部分特殊配置允许首夜自救）<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>女巫的解药极为珍贵。通常情况下，如果女巫在首夜能准确得知被狼人袭击的目标，会选择使用解药救人，尤其是当被救者可能是预言家等关键神职时<sup>2</sup>。</li>
+                            <li>毒药的使用需要更为谨慎的判断。可以用来精确打击已暴露的狼人，或在局势胶着时打破平衡。然而，盲目使用毒药（“盲毒”）的风险极高，一旦误伤好人，将对好人阵营造成重创<sup>2</sup>。官方设定的行为分机制也体现了这一点：成功毒杀狼人会获得加分，而毒杀好人则会受到惩罚<sup>2</sup>。</li>
+                            <li>女巫是狼人阵营的重点清除对象，因此必须注意隐藏自己的身份，并通过巧妙的发言向好人传递信息，而非直接暴露自己拥有药剂<sup>2</sup>。</li>
+                            <li>女巫的力量强大但有限，且高度依赖信息。何时对谁使用解药或毒药，往往能左右战局。特别是“不能自救”的规则（在多数标准板子中）<sup>5</sup>，增加了女巫的脆弱性，使其在面对危险时不得不依赖守卫等其他好人的保护。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>猎人 <span class="english-name">Hunter</span> <i class="fas fa-crosshairs ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>当猎人以特定方式死亡时（通常是被狼人夜晚杀害或白天被投票出局），可以发动技能，选择场上任意一名存活玩家开枪，使该玩家立即死亡<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>猎人的开枪条件有严格限制。通常情况下，如果猎人是被女巫毒杀或因情侣殉情而死，则不能发动技能开枪<sup>2</sup>。但若被狼王在死亡时指定带走，或被其他猎人的技能带走，则通常可以开枪<sup>5</sup>。</li>
+                            <li>猎人是否以及何时表明身份（“跳身份”）需要根据场上局势权衡。过早暴露身份可能会被狼人针对性地用毒药处理，使其无法开枪。</li>
+                            <li>精准射击至关重要，成功猎杀狼人会获得行为分奖励，而误伤好人则会受到惩罚<sup>2</sup>。</li>
+                            <li>猎人的存在本身对狼人阵营就是一种威慑。狼人在选择夜晚袭击目标或白天组织投票时，不得不忌惮猎人手中的枪，这可能迫使他们做出更保守的选择<sup>2</sup>。</li>
+                            <li>在游戏进入残局阶段，一个思路清晰的猎人往往能成为胜负手。如果能准确判断出潜藏的最后狼人，其临终一枪便可为好人阵营锁定胜局。因此，猎人需要从游戏开始就仔细分析局势，而不仅仅是在濒死时才思考射击目标<sup>2</sup>。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>守卫 <span class="english-name">Guard</span> <i class="fas fa-shield-halved ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每天晚上可以选择守护一名玩家，使其当晚免受狼人的袭击。守卫可以选择守护自己，但通常不能连续两晚守护同一名玩家（包括自己）<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>守卫的守护目标应优先选择已暴露身份或被高度怀疑是狼人攻击目标的己方关键角色，如预言家、女巫等<sup>2</sup>。</li>
+                            <li>需要特别注意“同守同救”的规则：如果守卫守护的玩家当晚确实被狼人攻击，而女巫也对该玩家使用了仅剩的解药，那么该玩家依然会死亡。这种情况被称为“奶穿”或“同守同救死”<sup>2</sup>。同时，守卫的守护无法抵挡女巫的毒药<sup>4</sup>。</li>
+                            <li>成功守护到被狼人袭击的好人会获得行为分奖励，而因“同守同救”导致好人死亡则会受到惩罚<sup>2</sup>。</li>
+                            <li>守卫的博弈在于猜测狼人的袭击目标。有时，守卫也可以选择“空守”（不守护任何人）或自守，以迷惑狼人或在危险时自保。</li>
+                            <li>一个成功的守卫往往在暗中发挥作用，其贡献（例如成功阻止了一次关键的暗杀）并不总是能被场上其他玩家直接观察到，因为一次被阻止的袭击并不会留下“尸体”。这使得守卫有时难以向村民证明自己的价值，甚至可能被狼人栽赃陷害。他们最大的成功往往是无形的，需要通过长远的局势发展才能体现。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>白痴 <span class="english-name">Idiot/Fool</span> <i class="fas fa-user-graduate ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>如果在白天的放逐投票中被公投出局，白痴可以翻开自己的身份牌，从而免除本次放逐。之后，白痴仍然可以参与发言，但会失去投票权。狼人阵营仍需在夜晚将其杀害才能使其真正淘汰。若白痴因非投票原因死亡（例如在夜晚被狼人杀害，或被女巫毒杀），则不能发动技能，会直接死亡<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>白痴的翻牌能力可以为好人阵营抵挡一次错误的放逐机会，并且在翻牌后，其好人身份得到确认<sup>2</sup>。</li>
+                            <li>在被怀疑并面临投票时，白痴可以根据局势选择是否立即翻牌。有时，通过高质量的发言争取信任，将翻牌的机会保留到更关键的时刻，或者利用翻牌来迷惑狼人的判断，可能会是更优的选择<sup>2</sup>。</li>
+                            <li>虽然在翻牌后失去投票权，白痴依然是场上一个已知的“好人”声音，可以通过有逻辑的发言继续影响和引导其他玩家的判断<sup>2</sup>。</li>
+                            <li>白痴的翻牌虽然确认了自身的好人身份，但其失去投票权也可能在票数紧张的残局中对好人阵营造成不利影响。因此，白痴玩家需要权衡何时利用自己的技能来最大化团队利益。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>骑士 <span class="english-name">Knight</span> <i class="fas fa-chess-knight ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>在白天的任意发言环节，骑士可以随时选择场上任意一名存活玩家发起“决斗”。如果被决斗的玩家是狼人阵营，则该狼人立即死亡，骑士存活，游戏跳过剩余发言和投票，直接进入黑夜阶段。如果被决斗的玩家是好人阵营，则骑士立即死亡，白天阶段继续进行<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>骑士的决斗是一项高风险、高回报的技能。成功决斗狼人会获得行为分奖励，并能迅速为好人阵营扳回劣势；但若决斗失误，不仅会牺牲一名神职，还会暴露自己的愚勇，因此决斗好人会受到行为分惩罚<sup>2</sup>。</li>
+                            <li>发动决斗的时机非常关键。通常在掌握了较为确切的信息，或者对某个玩家的狼人身份有高度怀疑时才应发动，避免在信息不足的情况下盲目决斗导致己方减员<sup>4</sup>。</li>
+                            <li>骑士的决斗对于某些拥有死亡技能的特殊狼人具有克制作用。例如，被骑士决斗杀死的狼王或狼美人，通常无法发动其死亡后带人或殉情的技能<sup>4</sup>。</li>
+                            <li>骑士的技能是游戏中少数几种可以在白天阶段立即、明确地验证其他玩家身份并直接造成击杀的方式。这种强大的即时效应使其成为一个极具威慑力的角色，但也要求使用者具备极强的判断力和承担风险的勇气。</li>
+                        </ul>
+                    </div>
+                     <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>摄梦人 <span class="english-name">Dreamer/Hypnotist</span> <i class="fas fa-bed ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每晚必须选择一名存活玩家进行“摄梦”，被选中的玩家当晚成为“梦游者”状态<sup>5</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>梦游者在被摄梦的当晚，会免疫所有夜间指向性技能，包括狼人的袭击、女巫的解药和毒药、猎人的子弹等。这些技能虽然会被视为已使用，但不会对梦游者产生实际效果（例如，狼人袭击梦游者视为“空刀”）<sup>5</sup>。</li>
+                            <li>如果摄梦人连续两晚对同一名玩家进行摄梦，则该玩家会在第二晚结束后直接死亡，并且这种死亡无法被女巫的解药所救治<sup>5</sup>。</li>
+                            <li>摄梦人与被其摄梦的玩家（梦游者）之间存在命运关联：若狼人袭击的是梦游者，则当晚狼人袭击落空；但若狼人袭击的是摄梦人本人，则梦游者会与摄梦人一同死亡。同理，女巫使用解药救活摄梦人，梦游者也会同时被救活；女巫使用毒药毒杀摄梦人，梦游者也会同时死亡<sup>5</sup>。</li>
+                            <li>一个特殊的判定：如果摄梦人当晚摄梦了一名狼人，而摄梦人自身又恰好被其他狼人袭击（即狼队内部分刀，一刀摄梦人，一刀其他人），那么被摄梦的那名狼人也会随摄梦人一同死亡<sup>6</sup>。</li>
+                            <li>被摄梦人通过连续摄梦导致死亡的神职角色（如猎人）和狼王，无法发动其死亡技能<sup>6</sup>。</li>
+                            <li>成功利用摄梦保护好人，或通过摄梦使狼人出局（例如梦游狼人被狼队误刀导致空刀，或双梦狼人致其死亡），会获得行为分奖励<sup>2</sup>。</li>
+                            <li>摄梦人引入了一种独特的攻防机制。其保护能力强大，但“双梦必死”和“命运相连”的特性也带来了极高的操作风险，可能导致意外的团队伤害或被狼人利用进行战略牺牲。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>守墓人 <span class="english-name">Grave Keeper</span> <i class="fas fa-landmark ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>在传统的狼人杀模式中，守墓人的技能是在每个夜晚得知前一天白天被公投出局的玩家的准确阵营（好人阵营或狼人阵营）<sup>4</sup>。该角色常出现在包含石像鬼等特殊狼人的游戏配置中<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>守墓人属于间接的验人神职，其获取的信息虽然会滞后一天，但具有绝对的准确性，能够帮助好人阵营排除干扰，确认已出局玩家的真实身份，从而逐步缩小场上狼人的范围<sup>7</sup>。</li>
+                            <li>守墓人的信息对于验证白天投票结果的正确性至关重要。如果场上对于某个被投出局玩家的身份存在争议，守墓人可以在次日提供确切答案，帮助好人阵营纠正判断，或识破狼人的栽赃陷害。</li>
+                            <li>需要注意的是，在某些包含“雪狼”等特殊狼人的板子中，守墓人查验被放逐出局的雪狼时，会得到其为好人的信息，这是雪狼迷惑神职的特殊能力<sup>4</sup>。</li>
+                            <li>守墓人的信息是回顾性的，但对于构建场上玩家的信任链条和识别潜藏的谎言非常有价值。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>猎魔人 <span class="english-name">Demon Hunter</span> <i class="fas fa-wand-sparkles ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>猎魔人通常具备夜间查验能力，并有机会“狩猎”狼人。一种常见的机制是：每晚可以查验一名玩家的阵营。如果查验目标是狼人阵营的玩家，猎魔人可以选择在该夜晚对其进行“狩猎”，被狩猎的狼人会在次日白天被宣布死亡。如果查验目标是好人，则通常无事发生。猎魔人的狩猎能力可能有次数限制或特殊发动条件<sup>2</sup>。行为分系统也暗示了其技能特点：“狩猎狼人+0.5（上限+1）；狩猎好人-1”<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>猎魔人的狩猎行动需要极度谨慎。错误地狩猎了好人阵营的玩家不仅会损失己方力量，还可能受到游戏内机制的惩罚（如行为分扣减）<sup>2</sup>。</li>
+                            <li>猎魔人是好人阵营中少数能够主动在夜间对狼人造成致命打击的角色，但其发挥效果的前提是准确的判断和果断的行动。</li>
+                            <li>与猎人死后开枪的被动反击不同，猎魔人可以在查验确认后主动出击，这使得其在清除确认的狼人时更为迅速和直接，但也因此承担了更高的误伤风险。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>愚者 <span class="english-name">Jester/Fool</span> <i class="fas fa-question-circle ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>若作为好人阵营的“愚者”，其技能通常与“白痴”类似：如果在白天的放逐投票中被公投出局，愚者可以翻开自己的身份牌，免除此次放逐，之后仍可以发言，但失去投票权。狼人仍需在夜晚将其杀害才能使其淘汰。若愚者因非投票原因死亡，则不能发动技能，直接死亡<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>愚者（白痴）的翻牌能为好人阵营挡下一推，并坐实一个好人身份，帮助好人梳理局面。</li>
+                            <li>面对抗推，愚者（白痴）可酌情隐藏身份，尝试通过发言扭转局面，将宝贵的翻牌机会留给更危急的时刻，或以此迷惑狼人，打乱其部署。</li>
+                            <li>即便失去投票权，作为明好人的愚者（白痴）仍能通过有价值的发言，为好人阵营提供分析和指引。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>流光伯爵 <span class="english-name">Count of Flowing Light</span> <i class="fas fa-star-of-life ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每晚可以选择一名玩家施加“流光庇护”。被庇护的玩家当晚可以免疫一次夜间伤害性技能（例如狼刀，但不包括蚀日侍女的吞噬技能效果）<sup>2</sup>。此技能若成功使一名好人免受伤害，则对流光伯爵有利<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>庇护的目标应优先选择己方关键神职或高危易受攻击的玩家<sup>2</sup>。</li>
+                            <li>流光伯爵的技能对特定的狼人角色“蚀日侍女”具有反制效果：如果蚀日侍女选择吞噬流光伯爵本人，或者吞噬了当晚被流光伯爵庇护的玩家，那么蚀日侍女将会遭遇“流光反噬”，在第二天白天因此出局。这使得流光伯爵在有蚀日侍女的板子中具有重要的战略意义<sup>8</sup>。</li>
+                            <li>需要注意的是，如果流光伯爵对狼人阵营的玩家使用了“流光庇护”，则会产生负面游戏效果（如行为分扣减）<sup>2</sup>，因此判断庇护对象的身份非常重要。</li>
+                            <li>流光伯爵可以看作是一个特殊的守护类角色，其价值不仅在于常规保护，更在于其针对特定狼人（蚀日侍女）的克制能力，这使得他在包含这些角色的对局中成为双方博弈的焦点。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>通灵师 <span class="english-name">Spirit Medium/Channeler</span> <i class="fas fa-ghost ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：好人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>根据<sup>9</sup>中对“机械狼”学习“通灵师”技能的描述，通灵师自身的技能可能是：“在学习（或激活）后的下一晚开始，每晚可以查验一名玩家的具体身份（类似于石像鬼，能看到确切的角色牌），但查验方式可能是‘先刀后验’”。“先刀后验”的具体机制可能指查验结果在当晚狼人行动结束后才揭晓，或者只能查验当晚被袭击的玩家，或者查验结果有延迟。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有狼人阵营玩家。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>如果“先刀后验”机制确实应用于通灵师，那么其获取信息的方式将比预言家更为被动或滞后，需要结合当晚的袭击情况来分析。</li>
+                            <li>若通灵师能查验具体身份（类似石像鬼），其信息价值极高，不仅能找出狼人，还能识别其他神职，但也因此更容易成为狼人的目标。</li>
+                            <li>通灵师的玩法策略在很大程度上取决于“先刀后验”的具体解释。若信息获取有延迟或条件限制，通灵师需要更谨慎地选择查验对象，并结合场上其他信息进行综合判断。</li>
+                            <li>这种带有前置条件或延迟效应的验人机制，可能是为了平衡其查验“具体身份”这一强大能力而设计的，使其在运作上与直接、主动的预言家有所区别。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="werewolf-roles" class="content-box relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-skull-crossbones text-[#E31937] absolute -bottom-16 -right-10 text-[18rem] md:text-[25rem] transform rotate-[-10deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">狼人阵营职业详解 <span class="english-subtitle">WEREWOLF CAMP ROLES</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>狼人 <span class="english-name">Werewolf</span> <i class="fas fa-paw ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每天晚上可以睁眼，与其他狼人同伴共同商议战术，并选择袭击一名玩家，使其在当晚死亡<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民（屠民边），或消灭所有神职（屠神边），或使场上存活的狼人数量达到或超过好人数量（有时也称屠城）<sup>2</sup>。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>狼人阵营的胜利高度依赖团队配合。夜晚需要统一袭击目标，避免分刀导致袭击失败；白天则需要相互掩护，打出配合，例如悍跳、倒钩、冲锋等战术<sup>2</sup>。</li>
+                            <li>普通狼人在白天需要尽力伪装成好人，通过积极参与讨论、分析局势（或故意误导）来获取好人信任，并将嫌疑引向其他好人<sup>2</sup>。</li>
+                            <li>“悍跳”是指狼人假冒预言家等强神身份，报出虚假的查验信息，以扰乱好人阵营的判断，争取警徽或抗推好人。这是一种高风险高收益的战术<sup>2</sup>。</li>
+                            <li>狼人可以在白天的任意发言阶段选择“自爆”，翻开自己的身份牌并立即结束当前的白天阶段（包括发言和投票），直接进入黑夜。自爆通常用于打乱好人阵营的节奏、保护即将暴露的狼队友、或者在特定战术下传递信息（如狼王自爆带人）<sup>4</sup>。</li>
+                            <li>狼人团队的核心优势在于夜间的秘密沟通和协同行动。一个缺乏组织和默契的狼队很容易被好人阵营逐个击破。因此，有效的夜间战术讨论和白天发言策略的统一至关重要。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>狼王 <span class="english-name">Wolf King</span> <i class="fas fa-crown ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>拥有普通狼人的夜间袭击能力。其特殊技能在于，当狼王死亡时（无论是被投票出局，还是被猎人射杀等方式），可以发动技能额外指定场上任意一名存活玩家，使其立即死亡。但通常情况下，如果狼王是被女巫毒杀或因情侣殉情而死，则不能发动此技能<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>狼王技能的发动条件需要注意：被女巫毒杀或情侣殉情通常无法开枪；但若被猎人带走，则可以发动技能<sup>2</sup>。</li>
+                            <li>狼王在发动技能时，选择带走的目标至关重要。优先选择对好人阵营威胁最大的神职，如持有药剂的女巫、拥有守护能力的守卫、或能扭转局势的摄梦人等，能为狼队带来巨大优势<sup>2</sup>。</li>
+                            <li>狼王的存在本身对好人阵营就是一种威慑。好人在进行投票或使用技能时，不得不顾忌狼王可能发动的致命一击，这可能使他们不敢轻易针对疑似狼王的玩家<sup>2</sup>。</li>
+                            <li>在某些游戏规则中，当狼王在场时，如果猎人和狼王同时发动技能，双方均不公布自己的角色牌，以增加迷惑性<sup>4</sup>。</li>
+                            <li>狼王的力量不仅在于其能带走一人，更在于这种“同归于尽”的威慑力。这种威慑可能使好人玩家在决策时犹豫不决，例如，即使高度怀疑某人为狼王，也可能因为害怕己方关键神职被一同带走而选择放过。狼王也可以利用此技能在关键时刻主动求死，以换取对己方更有利的神职。</li>
+                        </ul>
+                    </div>
+                     <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>白狼王 <span class="english-name">White Wolf King</span> <i class="fas fa-user-shield ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>拥有普通狼人的夜间袭击能力。其核心技能是：白狼王可以在白天的任意发言阶段选择“自爆”，在自爆的同时可以选择场上任意一名存活玩家，使其立即死亡。如果白狼王并非通过自爆方式出局（例如被投票出局或夜晚被杀），则不能发动带人技能<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>白狼王的“自爆带人”是其最具威慑力的技能，通常用于在关键时刻强行清除对狼人阵营威胁最大的好人角色（如已确认身份的预言家、手握双药的女巫等），或者在己方劣势时打破僵局，争取轮次<sup>4</sup>。</li>
+                            <li>根据一些规则，白狼王自爆并成功带走目标后，双方通常都没有遗言，这能有效阻止被带走的好人传递最后的信息<sup>4</sup>。</li>
+                            <li>与普通狼王的主要区别在于技能发动方式：白狼王必须通过白天的“自爆”来触发带人效果，而普通狼王则是在多种死亡方式下（通常不包括被毒杀）均可发动<sup>2</sup>。</li>
+                            <li>白狼王的主动牺牲往往能为狼队带来极大的战术收益。其选择在白天自爆并精准带走一名关键神职，可以瞬间扭转局势，甚至直接奠定狼队胜局。这种绕过投票、即时生效的清除能力，使其成为好人神职的噩梦。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>狼美人 <span class="english-name">Werewolf Beauty</span> <i class="fas fa-heart-crack ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每晚在狼人共同袭击一名玩家之后，狼美人可以单独睁眼，选择“魅惑”场上任意一名存活玩家。当狼美人因任何方式出局时（无论是被投票、被袭击、被毒杀或被猎杀），其在上一夜被魅惑的玩家会立即随之“殉情”死亡，并且该殉情玩家无法发动其自身可能拥有的死亡技能<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>被狼美人魅惑而殉情的玩家，其死亡顺序通常优先于狼美人，并且无法发动任何死亡技能（如猎人的枪、狼王的带人等）<sup>4</sup>。在大部分的游戏配置中，狼美人不能选择自刀或自爆<sup>4</sup>。</li>
+                            <li>狼美人在选择魅惑目标时，应优先考虑对好人阵营具有高价值的关键神职，例如手握药剂的女巫、拥有守护能力的守卫，或者尚未发动技能的骑士等。这样，一旦狼美人自身难保而出局，便能以“一换一”的方式带走对方重要力量，为狼队争取优势<sup>2</sup>。</li>
+                            <li>狼美人的存在为游戏增添了复杂的心理博弈。当一名玩家被高度怀疑是狼美人并面临被公投出局的风险时，其声称的“魅惑对象”会立即成为全场焦点，好人阵营需要权衡投票的利弊。</li>
+                            <li>狼美人如同在场上埋下了一颗延迟引爆的炸弹。她的出局必然会触发另一次死亡，如果她成功魅惑了一位关键神职，那么好人阵营在投票放逐她时将面临两难选择，这使得狼美人的威胁不仅仅在于她作为狼人的攻击力，更在于其强大的连锁效应。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>石像鬼 <span class="english-name">Gargoyle</span> <i class="fas fa-gem ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>石像鬼属于狼人阵营，但在游戏开始时通常不与狼队在夜间相认（即狼人不知道石像鬼的身份，而石像鬼可能知道狼队友的身份，或双方互不知晓，但<sup>10</sup>明确指出“石像鬼不与狼队相认”，暗示初始的相互匿名性，而<sup>2</sup>则描述为“在游戏开始时得知所有其他狼人的身份，但其他狼人不知道石像鬼的身份”。<sup>4</sup>也提到“与狼人夜里不见面”）。石像鬼每晚可以查验一名玩家的具体身份（即准确的角色牌，而非仅仅是阵营）。在游戏初期，石像鬼不参与狼队的夜间袭击（即不带刀）。只有当所有其他狼人同伴都出局后，石像鬼才会获得夜间袭击的能力（即“带刀”），这一转变通常由法官通过手势等方式告知。石像鬼不能自爆，但可以自刀（即选择在夜晚袭击自己，通常用于迷惑好人或执行特殊战术）<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>石像鬼的验人能力极为强大，可以直接洞悉玩家的底牌，获取场上最精确的身份信息<sup>10</sup>。</li>
+                            <li>由于石像鬼在前期不与狼队直接会面，其需要具备优秀的独立判断能力。通过白天的发言，石像鬼可以巧妙地向狼队友传递关键信息（例如暗示哪些是神职，哪些可以作为攻击目标），或者在行动上与狼队形成配合，同时也要避免被己方狼人在不知情的情况下误伤<sup>10</sup>。</li>
+                            <li>在狼队同伴相继阵亡后，石像鬼将成为狼人阵营翻盘的最后希望。其之前积累的准确验人信息，以及后续获得的袭击权，将使其在残局中拥有巨大的优势<sup>10</sup>。</li>
+                            <li>石像鬼扮演着狼队中独立情报员和后期核心输出的双重角色。这种独特的定位要求石像鬼玩家既要有细腻的观察和隐藏能力，又要在关键时刻能挺身而出，承担起带领狼队走向胜利的责任。其“不能自爆”的限制<sup>10</sup>，也意味着它无法像其他狼人一样通过自爆来打乱局势或保护队友。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>恶灵骑士 <span class="english-name">Evil Knight</span> <i class="fas fa-motorcycle ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>恶灵骑士在夜间与狼人一同行动（即知晓狼队友的身份，并参与制定袭击计划），但通常无法自爆。其核心特点是无法在夜间死亡（即免疫狼人的袭击、女巫的毒药等所有夜间死亡效果）。此外，恶灵骑士拥有一次性的被动反伤技能：如果被预言家查验，则预言家在次日白天死亡；如果被女巫使用毒药，则女巫在次日白天死亡（在此过程中，恶灵骑士自身不会因为被查验或被毒杀而死亡）<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>恶灵骑士的首要职责是利用其独特的反伤技能，清除对狼人阵营威胁最大的神职角色，尤其是预言家和女巫<sup>11</sup>。</li>
+                            <li>由于恶灵骑士无法自爆且夜间不死，其身份一旦暴露，在白天极易成为好人阵营的集火目标被投票出局。因此，恶灵骑士需要具备优秀的发言技巧和伪装能力来隐藏自己的真实身份<sup>11</sup>。</li>
+                            <li>关于反伤的结算：如果恶灵骑士在同一个夜晚被多名神职角色（如女巫和预言家）同时指定为技能目标，那么反伤效果通常会按照这些神职在夜晚的行动顺序依次结算。例如，如果女巫的行动顺序在预言家之前，且女巫对恶灵骑士使用了毒药，那么女巫会被反伤致死，而预言家后续的查验可能就不会再触发反伤（因为反伤技能通常是一次性的）<sup>12</sup>。</li>
+                            <li>恶灵骑士的玩法非常灵活。可以通过扮演“倒钩狼”（即伪装成好人攻击自己的狼队友以获取信任）、“冲锋狼”（即坚决跟随悍跳狼攻击真预言家），甚至是通过悍跳某个神职身份来主动吸引关键神职的技能，从而触发反伤效果<sup>11</sup>。</li>
+                            <li>恶灵骑士是狼队中一把专用于猎杀神职的利刃。其设计初衷就是通过将神职的强大技能反作用于其自身，来瓦解好人阵营的核心力量。这种独特的机制使其成为一个极具战术价值和操作难度的角色。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>赤月使徒 <span class="english-name">Red Moon Apostle</span> <i class="fas fa-moon ml-2 text-xl opacity-70 text-red-500"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>赤月使徒是狼人阵营的一员，知晓狼队友。其特殊能力在于可以“自爆”并指定一名玩家共同死亡，但这一指定目标通常限定为特定的神职，如持有药剂的女巫或猎魔人。此外，赤月使徒若能存活到狼人阵营最终胜利的时刻，可能会获得额外的游戏评价或奖励<sup>2</sup>。行为分系统显示：“存活到游戏结束(即狼人胜利时且赤月使徒仍存活才加此分）或自爆杀死带药女巫（至少单药）、猎魔人+0.5； 被毒杀、被猎杀-0.5”<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>狼人阵营取得胜利，并且自身仍然存活；或者通过自爆技能成功消灭了特定的高价值神职目标，为狼队胜利做出贡献。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>为了追求更高质量的胜利（例如游戏内的评分或成就），赤月使徒在确保狼队胜利的前提下，应尽可能地努力存活到最后<sup>2</sup>。</li>
+                            <li>自爆技能的使用时机至关重要。当判断能够通过自爆换取对方阵营中具有极高战略价值的关键角色（如手握解药或毒药的女巫、能够主动狩猎狼人的猎魔人）时，果断发动自爆往往是明智的选择，能够极大地削弱好人方的力量<sup>2</sup>。</li>
+                            <li>赤月使徒需要警惕某些特定的神职技能，例如女巫的毒药或猎人/猎魔人的狩猎，因为被这些技能消灭可能会导致负面的游戏评价<sup>2</sup>。</li>
+                            <li>赤月使徒在游戏中扮演着一个具有战略威慑和潜在自我牺牲能力的角色。其需要在保全自身以期获得最终胜利奖励与在关键时刻牺牲自己重创敌方核心力量之间做出权衡。这种双重目标使其决策过程更为复杂。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>蚀日侍女 <span class="english-name">Eclipse Maiden</span> <i class="fas fa-sun ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>蚀日侍女属于狼人阵营，但其运作方式较为独特。她知晓其他狼人队友的身份，但狼人队友并不知道她的身份。在游戏初期，她不参与狼队的夜间讨论和共同袭击，也不能自爆。只有在所有其他狼人同伴都已出局后，蚀日侍女才能在夜间发动袭击（即“接刀”）。其核心技能是从第二个夜晚开始，每晚可以选择一名好人阵营的玩家进行“吞噬”。成功吞噬后，蚀日侍女将获得该名被吞噬玩家的技能，并在当晚可以使用该技能。但是，蚀日侍女不能连续两个夜晚吞噬同一名玩家<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>蚀日侍女的核心玩法在于其强大的技能复制能力。通过吞噬不同的好人角色，她可以根据战局需要，在不同夜晚扮演不同的角色（如临时预言家、临时女巫等），为狼人阵营提供极大的灵活性和战术多变性<sup>8</sup>。</li>
+                            <li>需要特别警惕“流光反噬”机制：如果蚀日侍女选择吞噬的目标是“流光伯爵”本人，或者是当晚受到了流光伯爵技能庇护的玩家，那么蚀日侍女将会遭遇反噬，在第二天的白天因此直接出局。因此，在选择吞噬目标时，必须极力避免这种情况的发生<sup>8</sup>。</li>
+                            <li>蚀日侍女通常在游戏后期发力。前期她需要隐藏自己的身份，默默观察局势，积累信息。当狼队友相继阵亡后，她将凭借复制到的强大技能和继承的袭击权，成为狼人阵营翻盘的绝对核心<sup>8</sup>。</li>
+                            <li>蚀日侍女是一位极具迷惑性和适应性的狼人角色。她如同一个潜伏在暗影中的变色龙，通过吸收好人的能力来反噬好人阵营，尤其是在残局阶段，其多变的技能组合和独立的攻击能力，使她成为一个难以预测且极度危险的对手。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>机械狼 <span class="english-name">Mechanical Wolf</span> <i class="fas fa-cogs ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>机械狼在一局游戏中拥有一次“学习”的机会。它可以在任意一个夜晚开始时，选择场上任意一名存活的玩家作为学习对象，并根据学习对象的身份获得相应的后续技能<sup>9</sup>：</p>
+                        <ul class="list-disc list-inside text-neutral-400 text-xs mt-1 space-y-1">
+                            <li>学习通灵师：在学习后的下一晚开始，每晚可以查验一名玩家的具体身份（类似于石像鬼，但可能是“先刀后验”的机制）。</li>
+                            <li>学习女巫：在学习后的下一晚开始，可以在任意一个夜晚使用一次毒药，毒杀一名玩家（此毒药可能具有“穿盾”效果，即无视守卫的守护）。</li>
+                            <li>学习猎人：从学习当晚开始，如果机械狼自身达成了猎人的开枪条件（例如被投票出局或被狼队以外的方式杀死），则可以像狼王一样发动技能带走一名玩家。</li>
+                            <li>学习守卫：在学习后的下一晚开始，可以使用一次守护技能，守护一名玩家使其当晚免疫所有夜间伤害。</li>
+                            <li>学习狼人：在继承了普通狼人的杀人权利后（即参与狼队共同袭击），在机械狼发动学习“狼人”技能的当晚，可以先自行额外击杀一人，然后再参与狼队的集体袭击（即当晚可能造成双重打击）。</li>
+                            <li>学习平民：则无任何特殊技能获得。</li>
+                        </ul>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>学习对象的选择是机械狼玩法的核心，这个一次性的选择将直接决定机械狼在后续游戏中能发挥的作用和强度<sup>9</sup>。</li>
+                            <li>由于学习机会只有一次，机械狼必须审时度势，谨慎使用。通常会选择在能获取到关键神职技能，或者能极大增强狼队进攻火力时发动<sup>9</sup>。</li>
+                            <li>机械狼的潜力巨大。一旦成功学习到强力神职的技能（如女巫的致命毒药、猎人的复仇之枪）或者狼人的双刀能力，就能极大地提升狼人阵营的整体实力，甚至扭转战局<sup>9</sup>。</li>
+                            <li>机械狼的独特之处在于其一次性的技能复制能力，这使得它在发动技能的当晚成为对局中的一个重要转折点。狼队需要围绕机械狼的学习目标和时机来制定相应的战术。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>雪狼 <span class="english-name">Snow Wolf</span> <i class="fas fa-snowflake ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：狼人阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>雪狼拥有普通狼人的夜间袭击能力。其最为特殊的技能在于其对好人阵营验人神职的迷惑性：当雪狼被预言家查验，或被熊（一种具有验人能力的神职）侦测时，查验结果均会显示雪狼为好人身份。同样的，如果雪狼在白天被投票出局，守墓人查验其身份时，也会得到该出局玩家为好人的信息<sup>4</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>消灭所有平民，或消灭所有神民，或使场上狼人数量多于等于好人数量。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>雪狼的主要战略价值在于其强大的迷惑能力。它能够有效地干扰好人方的信息获取，为狼队争取宝贵的时间，甚至制造冤假错案，使好人阵营陷入混乱<sup>14</sup>。</li>
+                            <li>尽管雪狼能骗过多种常规验人手段，但并非无懈可击。例如，在某些规则中，骑士与雪狼进行决斗时，雪狼会被成功杀死，这意味着骑士的技能可以识破雪狼的伪装<sup>14</sup>。</li>
+                            <li>在包含“黑市商人”等特殊角色的板子中，如果黑市商人选择与雪狼进行交易，可能会导致交易失败并且黑市商人自身死亡<sup>14</sup>。</li>
+                            <li>由于其高度的隐蔽性，雪狼非常适合扮演“深水狼”的角色，长期潜伏在好人阵营中，窃取信任，并在关键时刻给予致命一击<sup>4</sup>。</li>
+                            <li>雪狼的存在直接挑战了好人阵营信息链的可靠性。一个被预言家“金水”（查验为好人）的雪狼，或者一个被守墓人“盖棺定论”为好人的出局雪狼，都可能极大地误导好人的判断，使得“已确认好人”的身份不再绝对可靠。这种对信息体系的颠覆，是雪狼最为可怕之处。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="third-party-roles" class="content-box relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-random text-[#E31937] absolute -top-10 -left-10 text-[18rem] md:text-[25rem] transform rotate-[20deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">第三方阵营职业详解 <span class="english-subtitle">THIRD-PARTY CAMP ROLES</span></h2>
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>丘比特 <span class="english-name">Cupid</span> <i class="fas fa-heart ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：第三方阵营 (初始) / 根据情侣阵营决定 (后续)</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>在游戏的第一个夜晚，丘比特可以选择场上任意两名玩家（可以选择包括自己在内）让他们成为“情侣”。情侣双方会立即知晓对方的身份，并且他们的命运将紧密相连：其中一人死亡，另一人也会立即“殉情”身亡<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>丘比特的胜利条件完全取决于他所连接的情侣的阵营构成<sup>2</sup>：</p>
+                        <ul class="list-disc list-inside text-neutral-400 text-xs mt-1 space-y-1">
+                            <li>若情侣为“人狼恋”：丘比特将与这对情侣共同组成一个独立的第三方阵营。他们的胜利条件是消灭场上所有其他的玩家。</li>
+                            <li>若情侣为同一阵营：丘比特的胜利条件将等同于情侣所在阵营的胜利条件。</li>
+                            <li>若丘比特将自己也连为情侣中的一员：则按上述规则判断。</li>
+                        </ul>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>丘比特在第一夜连接情侣的选择，是整个游戏中最为关键的决策之一<sup>2</sup>。</li>
+                            <li>“人狼恋”是最具挑战性也最具趣味性的一种情侣组合。在这种情况下，丘比特和情侣们需要在好人与狼人两大阵营的夹缝中求生存<sup>2</sup>。</li>
+                            <li>丘比特在连接情侣后，需要尽快通过观察和分析来判断情侣双方的真实身份和阵营<sup>15</sup>。</li>
+                            <li>丘比特从游戏的第一夜起就从根本上改变了场上的阵营格局。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate">
+                        <h3>盗贼 <span class="english-name">Thief</span> <i class="fas fa-mask ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：第三方阵营 (初始) / 根据选择身份决定 (后续)</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>在游戏的第一个夜晚，上帝会向盗贼展示两张本局游戏中未被其他玩家选择的身份牌。盗贼可以在这两张牌中选择任意一张作为自己的新身份。如果这两张牌中包含有狼人身份，盗贼可以选择成为狼人；如果都是狼人，则必须选择成为狼人。盗贼也可以选择不更换身份<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>盗贼的胜利条件取决于其最终选择并扮演的身份。如果他选择了某个阵营的身份，则其胜利条件与该阵营一致。如果他选择保留盗贼身份，则其胜利条件可能会比较特殊<sup>2</sup>。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>盗贼在第一夜对身份的选择是其玩法的核心<sup>2</sup>。</li>
+                            <li>盗贼在游戏开局时就拥有了额外的信息优势，因为他至少知道两张未在本局游戏中登场的身份牌是什么<sup>2</sup>。</li>
+                            <li>如果盗贼选择了一个具有明确阵营归属的身份，那么他需要尽快融入新的阵营团队<sup>2</sup>。</li>
+                            <li>盗贼的存在为游戏的初始角色分配引入了不确定性。</li>
+                        </ul>
+                    </div>
+                    <div class="role-card p-6 rounded-lg bg-neutral-800/50 tech-border fm-animate md:col-span-2 lg:col-span-1"> <h3>吹笛者 <span class="english-name">Pied Piper</span> <i class="fas fa-flute ml-2 text-xl opacity-70"></i></h3>
+                        <p class="text-sm text-neutral-500 mb-3">阵营：第三方阵营</p>
+                        <h4>技能介绍 <span class="english-label">SKILL</span></h4>
+                        <p>每个夜晚，在女巫行动结束之后，吹笛者会被唤醒，并可以选择场上任意两名存活的玩家对其施加魔法（即“迷惑”）。所有曾经被吹笛者迷惑过的玩家会一同睁眼，互相确认彼此都是“被迷惑者”的身份，然后闭眼。被迷惑的玩家仍然扮演他们原本的角色<sup>2</sup>。</p>
+                        <h4>胜利条件 <span class="english-label">VICTORY</span></h4>
+                        <p>当场上所有存活的玩家都被吹笛者成功迷惑时，吹笛者单独获得胜利，而其他所有阵营均宣告失败<sup>2</sup>。</p>
+                        <h4>TIPS</h4>
+                        <ul class="list-disc">
+                            <li>吹笛者是在与时间赛跑。他必须赶在其他阵营胜利之前，将场上所有幸存者都纳入自己的迷惑范围<sup>16</sup>。</li>
+                            <li>吹笛者非常考验玩家的“抿人”能力。他需要准确地判断哪些玩家在当晚不容易被狼人袭击，也不容易在次日的白天被投票出局<sup>16</sup>。</li>
+                            <li>在白天的发言中，吹笛者需要巧妙地隐藏自己的真实身份和吹笛意图<sup>16</sup>。</li>
+                            <li>被迷惑的玩家虽然知晓了其他被迷惑者的存在，但在吹笛者达成胜利条件之前，他们仍然需要为自己原来的阵营服务和战斗。</li>
+                            <li>吹笛者通过一种隐秘而渐进的方式来实现其征服。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="content-box relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-[0.02]">
+                <i class="fas fa-flag-checkered text-[#E31937] absolute -bottom-5 -right-5 text-[12rem] md:text-[18rem] transform rotate-[-15deg]"></i>
+            </div>
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">结语 <span class="english-subtitle">CONCLUSION</span></h2>
+                <p class="mb-4">狼人杀游戏的魅力，很大程度上源于其丰富多样的职业设定、各具特色的技能机制，以及由此衍生出的无穷无尽的策略组合与博弈乐趣。每一个角色的加入，都可能为战局带来全新的变数和挑战。</p>
+                <p class="mb-4">希望本百科全书式的职业介绍，能够帮助各位玩家不仅熟悉自己所扮演的每一个职业的特性与技巧，更能深入理解在整个游戏环境中，不同角色之间可能发生的复杂互动与克制关系。唯有如此，才能在变幻莫测的牌局中运筹帷幄，洞察先机，真正享受逻辑推理与心理较量所带来的极致快感。</p>
+                <p>最后，需要铭记的是，狼人杀的核心在于逻辑思辨、有效沟通以及团队协作（即便是伪装的协作）。胜负固然重要，但在紧张刺激的对决之外，享受游戏过程本身，体验与朋友们斗智斗勇的欢乐，或许才是这款游戏更为持久的吸引力所在<sup>2</sup>。</p>
+            </div>
+        </section>
+
+        <section id="references" class="content-box">
+            <div class="fm-animate p-6 md:p-8 rounded-xl bento-box">
+                <h2 class="highlight-red chinese-bold-large">引用的著作 <span class="english-subtitle">REFERENCES</span></h2>
+                <ul class="list-decimal list-inside space-y-2 text-sm">
+                    <li><a href="https://zh.wikipedia.org/zh-cn/%E7%8B%BC%E4%BA%BA%E6%AE%BA" target="_blank" class="hover:text-[#E31937] transition-colors">狼人杀- 维基百科，自由的百科全书 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/20230313/31014_1077578.html" target="_blank" class="hover:text-[#E31937] transition-colors">《狼人杀-官方正版》官方网站-和全网年轻人热闹组局 - 网易 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.m.wikiversity.org/zh-sg/%E7%8B%BC%E4%BA%BA%E6%AE%BA/%E6%9D%BF%E5%AD%90" target="_blank" class="hover:text-[#E31937] transition-colors">板子(狼人殺) - 维基学院，自由的研习社群 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.wikipedia.org/zh-tw/%E7%8B%BC%E4%BA%BA%E6%AE%BA" target="_blank" class="hover:text-[#E31937] transition-colors">狼人殺- 維基百科，自由的百科全書 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/wanfa/guize/2017/10/18/26899_719311.html" target="_blank" class="hover:text-[#E31937] transition-colors">规则介绍 - 《狼人杀-官方正版》官方网站 - 网易 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/wanfa/tese/2017/10/17/26900_719123.html" target="_blank" class="hover:text-[#E31937] transition-colors">摄梦人 - 《狼人杀-官方正版》官方网站 - 网易 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/news/official/20210125/26904_928581.html" target="_blank" class="hover:text-[#E31937] transition-colors">跑跑狼人杀：指路明灯“守墓人”攻略！ - 《狼人杀-官方正版》官方网站 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/news/official/20220720/26904_1031764.html" target="_blank" class="hover:text-[#E31937] transition-colors">光影交织，蚀日流光！狼人杀暑期版本重磅上线！ - 《狼人杀-官方正版》官方网站 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.m.wikiversity.org/zh-hans/%E7%8B%BC%E4%BA%BA%E6%AE%BA/%E9%81%8A%E6%88%B2%E8%A7%92%E8%89%B2/%E6%A9%9F%E6%A2%B0%E7%8B%BC" target="_blank" class="hover:text-[#E31937] transition-colors">狼人杀/游戏角色/机械狼- 维基学院 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.m.wikiversity.org/zh-hans/%E7%8B%BC%E4%BA%BA%E6%AE%BA/%E9%81%8A%E6%88%B2%E8%A7%92%E8%89%B2/%E7%9F%B3%E5%83%8F%E9%AC%BC" target="_blank" class="hover:text-[#E31937] transition-colors">石像鬼(狼人杀角色) - 维基学院 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/hantiao/jiaoxue/2018/07/09/26897_763556.html" target="_blank" class="hover:text-[#E31937] transition-colors">《狼人杀-官方正版》官方网站-悍跳教学 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.m.wikiversity.org/zh-cn/%E7%8B%BC%E4%BA%BA%E6%AE%BA/%E9%81%8A%E6%88%B2%E8%A7%92%E8%89%B2/%E6%83%A1%E9%9D%88%E9%A8%8E%E5%A3%AB" target="_blank" class="hover:text-[#E31937] transition-colors">恶灵骑士(狼人杀角色) - 维基学院 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/" target="_blank" class="hover:text-[#E31937] transition-colors">《狼人杀-官方正版》官方网站 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://zh.m.wikiversity.org/zh-hans/%E7%8B%BC%E4%BA%BA%E6%AE%BA/%E9%81%8A%E6%88%B2%E8%A7%92%E8%89%B2/%E9%9B%AA%E7%8B%BC_(%E5%87%B9%E5%97%9A%E7%8B%BC%E4%BA%BA%E6%AE%BA)" target="_blank" class="hover:text-[#E31937] transition-colors">雪狼(凹呜狼人杀角色) - 维基学院 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://caijing.chinadaily.com.cn/a/202104/28/WS60892a52a3101e7ce974cae8.html" target="_blank" class="hover:text-[#E31937] transition-colors">狼人杀怎么玩?狼人杀经典角色大盘点 - C财经 (访问时间: 五月 16, 2025)</a></li>
+                    <li><a href="https://langrensha.163.com/news/strategy/20210222/30886_933042.html" target="_blank" class="hover:text-[#E31937] transition-colors">吹笛者角色攻略 - 《狼人杀-官方正版》官方网站 (访问时间: 五月 16, 2025)</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-neutral-500 text-sm">
+        <p>&copy; 2025 NWK狼人杀职业百科全书. All rights reserved (concept page).</p>
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded before executing the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Framer Motion library is exposed as 'motion' on the window object when loaded via UMD script
+            // Destructure 'animate' from the 'motion' object
+            const { animate } = motion; 
+
+            // Select all elements intended for animation
+            const animatedElements = document.querySelectorAll('.fm-animate');
+
+            // Create an IntersectionObserver to trigger animations when elements enter the viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element is intersecting (visible)
+                    if (entry.isIntersecting) {
+                        // Animate the element to its target state (opacity 1, y 0, scale 1)
+                        animate(entry.target, 
+                            { opacity: 1, y: 0, scale: 1 }, 
+                            { duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99] } // Custom easing for a smooth effect
+                        );
+                        // Stop observing the element after animation to prevent re-triggering
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+            // For each element marked for animation:
+            animatedElements.forEach(el => {
+                // Set initial styles for the pre-animation state (invisible and slightly offset)
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px) scale(0.97)'; 
+                // Start observing the element
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
